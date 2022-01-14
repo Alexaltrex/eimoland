@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/eimoland/static/css/main.c2dfdf93.css",
+    "main.js": "/eimoland/static/js/main.733605cb.js",
+    "static/js/787.eb43d37c.chunk.js": "/eimoland/static/js/787.eb43d37c.chunk.js",
+    "static/media/home-back.png": "/eimoland/static/media/home-back.6165a11285b382b0ec03.png",
+    "static/media/home-races.png": "/eimoland/static/media/home-races.3c5dccd641f42fa7b53f.png",
+    "static/media/timer-gnom.png": "/eimoland/static/media/timer-gnom.4d2bc22cf6fc68bb7680.png",
+    "static/media/home-Eimolad.png": "/eimoland/static/media/home-Eimolad.0242ba09c14ff98b4179.png",
+    "static/media/home-button.png": "/eimoland/static/media/home-button.2b11a934628dc1cf2f54.png",
+    "static/media/about2.png": "/eimoland/static/media/about2.6fc1cd412c60b2ff6b65.png",
+    "static/media/about1.png": "/eimoland/static/media/about1.18020c20692b3487ee7b.png",
+    "static/media/about4.png": "/eimoland/static/media/about4.ba635922a45538eb6e8d.png",
+    "static/media/about3.png": "/eimoland/static/media/about3.2feabf3b78f355e9f417.png",
+    "index.html": "/eimoland/index.html",
+    "main.c2dfdf93.css.map": "/eimoland/static/css/main.c2dfdf93.css.map",
+    "main.733605cb.js.map": "/eimoland/static/js/main.733605cb.js.map",
+    "787.eb43d37c.chunk.js.map": "/eimoland/static/js/787.eb43d37c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2dfdf93.css",
+    "static/js/main.733605cb.js"
+  ]
+}
