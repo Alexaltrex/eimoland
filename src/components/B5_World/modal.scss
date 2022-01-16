@@ -1,0 +1,131 @@
+@import "../../assets/scss/app.scss";
+
+.world-overlay {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(13, 13, 13, 0.7);
+}
+
+.world-modal {
+  z-index: 999;
+  position: absolute;
+  border-radius: 20px;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  padding: 20px;
+
+  @include desktop() {
+    top: 100px;
+    bottom: 100px;
+    max-width: 1110px;
+    padding: 50px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  &-back {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 20px;
+  }
+
+  &-mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1B1A1A;
+    opacity: 0.8;
+    border-radius: 20px;
+  }
+
+  &-title {
+    position: relative;
+    z-index: 2;
+    font-family: Overlock;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #FAFAFA;
+
+    @include desktop() {
+      font-size: 48px;
+    }
+
+    & span {
+      color: #CF5929;
+    }
+  }
+
+  &-texts {
+    margin-top: 25px;
+    position: relative;
+    z-index: 2;
+    max-height: calc(100vh - 150px);
+    overflow: auto;
+    padding-right: 10px;
+
+    @include desktop() {
+      margin-top: 35px;
+      height: calc(100vh - 395px);
+      padding-right: 60px;
+    }
+
+    p {
+      font-family: Comfortaa;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 160%;
+      letter-spacing: 0.01em;
+      color: #B8B8B8;
+
+      &:not(:first-child) {
+        margin-top: 35px;
+      }
+
+    }
+
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #232327;
+      border-radius: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: linear-gradient(130.7deg, #D24328 11.94%, #EC832E 95.54%);
+      border-radius: 5px;
+    }
+
+  }
+
+  &-close {
+    z-index: 2;
+    position: absolute;
+    cursor: pointer;
+    top: 25px;
+    right: 25px;
+    width: 17px;
+    height: 17px;
+  }
+
+}
+

@@ -1,0 +1,114 @@
+@import "../../assets/scss/app.scss";
+
+.home {
+  padding: 40px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  @include desktop() {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .title {
+      width: 100%;
+      height: auto;
+
+      @include desktop() {
+        width: 893px;
+        height: 200px;
+      }
+    }
+
+    .races {
+      width: 100%;
+      height: auto;
+
+      @include desktop() {
+        margin-top: -125px;
+        width: 1198.21px;
+        height: 753.23px;
+      }
+    }
+
+    .btnBlock {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+
+      @include desktop() {
+        margin-top: -40px;
+      }
+
+
+      .btnWrapper {
+        position: relative;
+
+        .btn {
+          border: none;
+          width: 231px;
+          height: 52px;
+          cursor: pointer;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: none;
+          overflow: hidden;
+          margin: 0 16px;
+
+          span {
+            z-index: 2;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 18px;
+            line-height: 22px;
+            text-transform: uppercase;
+            color: #000000;
+          }
+
+        }
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 353px;
+          height: 174px;
+          display: block;
+        }
+      }
+
+      .btnAside {
+        @include onlyDesktop();
+      }
+
+    }
+
+
+  }
+
+  .blur {
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translate(-50%, 0);
+  }
+
+}

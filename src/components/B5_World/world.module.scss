@@ -1,0 +1,108 @@
+@import "../../assets/scss/app.scss";
+
+.world {
+  padding: 40px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+
+  @include desktop() {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+  }
+
+  .inner {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .title {
+      font-family: Overlock;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 40px;
+      line-height: 46px;
+      letter-spacing: 0.01em;
+      color: #FAFAFA;
+      text-align: center;
+
+      @include desktop() {
+        font-size: 48px;
+        line-height: 59px;
+      }
+
+      span {
+        color: #CF5929;
+      }
+
+    }
+
+    .texts {
+      margin-top: 30px;
+
+      @include desktop() {
+        margin-top: 50px;
+        width: 1110px;
+      }
+
+      p:not(:first-child) {
+        margin-top: 20px;
+      }
+    }
+
+    .btnBlock {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include desktop() {
+        margin-top: 40px;
+      }
+
+      img {
+        @include onlyDesktop();
+      }
+
+      button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 160%;
+        letter-spacing: 0.01em;
+        text-decoration: underline;
+        @include text-gradient(#D24328, #EC832E);
+        border-bottom: 1px solid #EC832E;
+
+        @include desktop() {
+          margin: 0px 60px;
+          font-size: 24px;
+        }
+      }
+    }
+
+    .img1 {
+      position: absolute;
+      bottom: -210px;
+      left: -450px;
+    }
+
+    .img2 {
+      position: absolute;
+      right: -470px;
+      top: -220px;
+    }
+
+  }
+
+}
