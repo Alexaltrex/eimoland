@@ -64,21 +64,21 @@ export const Timer = () => {
 
                     <div className={style.timerWrapper}>
                         <div className={style.timerSubWrapper}>
-                            <TimerBlock num1={convertToTwoDigit(getDays(time))[0]}
-                                        num2={convertToTwoDigit(getDays(time))[1]}
+                            <TimerBlock num1="1"//{convertToTwoDigit(getDays(time))[0]}
+                                        num2="4"//{convertToTwoDigit(getDays(time))[1]}
                                         title="Days"/>
-                            <TimerBlock num1={convertToTwoDigit(getHours(time))[0]}
-                                        num2={convertToTwoDigit(getHours(time))[1]}
+                            <TimerBlock num1="0"//{convertToTwoDigit(getHours(time))[0]}
+                                        num2="0"//{convertToTwoDigit(getHours(time))[1]}
                                         title="Hours"/>
                         </div>
                         <div className={style.timerSubWrapper}
 
                         >
-                            <TimerBlock num1={convertToTwoDigit(getMins(time))[0]}
-                                        num2={convertToTwoDigit(getMins(time))[1]}
+                            <TimerBlock num1="0"//{convertToTwoDigit(getMins(time))[0]}
+                                        num2="0"//{convertToTwoDigit(getMins(time))[1]}
                                         title="Minutes"/>
-                            <TimerBlock num1={convertToTwoDigit(getSecs(time))[0]}
-                                        num2={convertToTwoDigit(getSecs(time))[1]}
+                            <TimerBlock num1="0"//{convertToTwoDigit(getSecs(time))[0]}
+                                        num2="0"//{convertToTwoDigit(getSecs(time))[1]}
                                         title="Seconds"/>
                         </div>
 

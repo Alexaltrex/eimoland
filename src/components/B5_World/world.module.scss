@@ -47,14 +47,26 @@
     .texts {
       margin-top: 30px;
 
+
       @include desktop() {
         margin-top: 50px;
         width: 1110px;
       }
 
-      p:not(:first-child) {
-        margin-top: 20px;
+      p {
+        font-family: Comfortaa;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 160%;
+        letter-spacing: 0.01em;
+        color: #B8B8B8;
+
+        &:not(:first-child) {
+          margin-top: 20px;
+        }
       }
+
     }
 
     .btnBlock {
@@ -71,7 +83,8 @@
         @include onlyDesktop();
       }
 
-      button {
+      .button {
+        white-space: normal;
         border: none;
         background: none;
         cursor: pointer;
@@ -80,7 +93,7 @@
         font-size: 18px;
         line-height: 160%;
         letter-spacing: 0.01em;
-        text-decoration: underline;
+        //text-decoration: underline;
         @include text-gradient(#D24328, #EC832E);
         border-bottom: 1px solid #EC832E;
 

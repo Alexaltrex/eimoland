@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import style from "./home.module.scss";
 import eimoland from '../../assets/png/home-Eimolad.png';
 import races from '../../assets/png/home-races.png';
@@ -9,6 +9,13 @@ import back from '../../assets/png/home-back.png';
 import blur from '../../assets/png/home-blur.png';
 
 export const Home = () => {
+    const [show, setShow] = useState(false)
+
+    const onClickHandler = () => {
+        setShow(true);
+        const id = setTimeout(() => setShow(false), 1000);
+    }
+
     return (
         <section className={style.home} style={{backgroundImage: `url(${back})`}}>
             <div className={style.inner}>
@@ -19,8 +26,16 @@ export const Home = () => {
 
                     <div className={style.btnWrapper}>
                         <img src={btn} alt=""/>
-                        <button className={style.btn}>
+                        <button className={style.btn}
+                                onClick={onClickHandler}
+                        >
                             <span>play now</span>
+
+                            {
+                                show &&
+                                <p className={style.progress}>In progress...</p>
+                            }
+
                         </button>
 
                     </div>

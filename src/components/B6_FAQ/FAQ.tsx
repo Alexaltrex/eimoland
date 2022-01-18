@@ -8,12 +8,11 @@ import src4 from "../../assets/png/timer-icon-4.png";
 import src5 from "../../assets/png/timer-icon-5.png";
 import src6 from "../../assets/png/timer-icon-6.png";
 import src7 from "../../assets/png/timer-icon-7.png";
-import back from "../../assets/png/faq-back.png";
+import back2 from "../../assets/png/faq-back2.png";
 import leftBottom from "../../assets/png/faq-left-bottom.png";
 import rightTop from "../../assets/png/faq-right-top.png";
 import {Accordion, AccordionDetails} from "@mui/material";
 import AccordionSummary from "@mui/material/AccordionSummary";
-import Typography from "@mui/material/Typography";
 
 export const iconLinks = [
     {src: src1, href: "#"},
@@ -64,7 +63,7 @@ export const accordions = [
 
 
 export const FAQ = () => {
-    const [expandedIndex, setExpandedIndex] = React.useState<null | number>(null);
+    const [expandedIndex, setExpandedIndex] = React.useState<null | number>(0);
     const onChangeHandler = (index: number) => (event: React.SyntheticEvent, isExpanded: boolean) => {
         setExpandedIndex(index);
     };
@@ -73,7 +72,7 @@ export const FAQ = () => {
     return (
         <section className={style.faq}
         >
-            <img src={back} alt="" className={style.blur}/>
+            <img src={back2} alt="" className={style.img}/>
 
             <div className={style.top}>
                 <div className={style.inner}>

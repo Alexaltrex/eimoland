@@ -69,6 +69,7 @@
         }
 
         .race {
+          z-index: 2;
           width: 180px;
           height: 180px;
           background: #414141;
@@ -90,6 +91,7 @@
 
           img {
             position: absolute;
+            pointer-events: none;
           }
 
         }
@@ -148,10 +150,26 @@
       }
 
       .leftBlock {
+        position: relative;
+        z-index: 1;
 
+        .hero {
+
+          @include desktop() {
+            position: absolute;
+            top: calc(50% + 40px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: auto;
+            height: auto;
+          }
+
+        }
       }
 
       .rightBlock {
+        position: relative;
+        z-index: 2;
 
         .title {
           font-style: normal;
@@ -210,9 +228,12 @@
           background: rgba(33, 33, 35, 0.8);
           padding: 10px;
           overflow: hidden;
+          height: 210px;
+          display: flex;
+          justify-content: stretch;
 
           @include desktop() {
-            padding: 16px;
+            padding: 15px;
           }
 
           .contentBack {
@@ -260,53 +281,66 @@
           }
 
           .contentInner {
+            flex-grow: 1;
             position: relative;
             z-index: 4;
             border: 1px solid #313131;
-            padding: 10px;
+            box-sizing: border-box;
+            max-height: 100%;
+            //padding: 10px;
             display: flex;
-            //align-items: center;
-            justify-content: space-evenly;
+            justify-content: stretch;
+            align-items: center;
 
             @include desktop() {
-              padding: 30px;
+              //padding: 30px;
             }
 
-            .currentFeatureItem {
+            .inner2 {
+              flex-grow: 1;
               display: flex;
-              flex-direction: column;
-              align-items: center;
+              justify-content: space-evenly;
 
-              img {
-                width: 50px;
-                height: 50px;
 
-                @include desktop() {
-                  width: 100px;
-                  height: 100px;
+              .currentFeatureItem {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                  width: 50px;
+                  height: 50px;
+
+                  @include desktop() {
+                    width: 100px;
+                    height: 100px;
+                  }
+                }
+
+                p {
+                  margin-top: 18px;
+                  font-family: Comfortaa;
+                  font-style: normal;
+                  font-weight: normal;
+                  font-size: 13px;
+                  line-height: 160%;
+                  text-align: center;
+                  text-transform: uppercase;
+                  color: #B8B8B8;
                 }
               }
 
-              p {
-                margin-top: 18px;
-                font-family: Comfortaa;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 13px;
-                line-height: 160%;
-                text-align: center;
-                text-transform: uppercase;
-                color: #B8B8B8;
+              .empty {
+                font-family: Comfortraa;
+                font-weight: bold;
+                font-size: 36px;
+                font-weight: bold;
+                color: #b8b8b8;
               }
+
             }
 
-            .empty {
-              font-family: Comfortraa;
-              font-weight: bold;
-              font-size: 36px;
-              font-weight: bold;
-              color: #b8b8b8;
-            }
+
 
           }
 

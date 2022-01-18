@@ -190,7 +190,7 @@ export const Features = () => {
                 <div className={style.middleBlock}>
 
                     <div className={style.leftBlock}>
-                        <img src={selectRaceIndex === 0 ? gnome : gnome} alt=""/>
+                        <img src={selectRaceIndex === 0 ? gnome : gnome} alt="" className={style.hero}/>
                     </div>
 
                     <div className={style.rightBlock}>
@@ -217,24 +217,27 @@ export const Features = () => {
                             <div className={style.mask}/>
 
                             <div className={style.contentInner}>
-                                {
-                                    currentFeature.length
-                                    ? (
-                                        <>
-                                            {
-                                                (currentFeature as any[]).map((el, index) => (
-                                                    <div className={style.currentFeatureItem} key={index}>
-                                                        {/*@ts-ignore*/}
-                                                        <img src={featuresIcons[el?.name]} alt=""/>
-                                                        {/*@ts-ignore*/}
-                                                        <p>{el.description}</p>
-                                                    </div>
-                                                ))
-                                            }
-                                        </>
-                                        )
-                                        : <p className={style.empty}>Soon...</p>
-                                }
+                                <div className={style.inner2}>
+                                    {
+                                        currentFeature.length
+                                            ? (
+                                                <>
+                                                    {
+                                                        (currentFeature as any[]).map((el, index) => (
+                                                            <div className={style.currentFeatureItem} key={index}>
+                                                                {/*@ts-ignore*/}
+                                                                <img src={featuresIcons[el?.name]} alt=""/>
+                                                                {/*@ts-ignore*/}
+                                                                <p>{el.description}</p>
+                                                            </div>
+                                                        ))
+                                                    }
+                                                </>
+                                            )
+                                            : <p className={style.empty}>Soon...</p>
+                                    }
+                                </div>
+
                             </div>
 
                             <img src={leftBottom} alt="" className={style.leftBottom}/>
