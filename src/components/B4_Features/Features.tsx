@@ -31,6 +31,15 @@ import mace from "../../assets/png/featuresIcons/mace.png";
 import strenght from "../../assets/png/featuresIcons/strenght.png";
 import dexterity from "../../assets/png/featuresIcons/dexterity.png";
 import intelligency from "../../assets/png/featuresIcons/intelligency.png";
+
+import heavyArmor from "../../assets/png/featuresIcons/heavyArmor.png";
+import lightArmor from "../../assets/png/featuresIcons/lightArmor.png";
+import magicRobe from "../../assets/png/featuresIcons/magicRobe.png";
+import shield from "../../assets/png/featuresIcons/shield.png";
+
+import batteryFull from "../../assets/png/featuresIcons/batteryFull.png";
+import batteryNotFull from "../../assets/png/featuresIcons/batteryNotFull.png";
+
 import back from "../../assets/png/features-back.png";
 import gnome from "../../assets/png/features-gnome.png";
 import soon from "../../assets/png/features-soon.png";
@@ -42,7 +51,11 @@ const featuresIcons = {
     mace,
     strenght,
     dexterity,
-    intelligency
+    intelligency,
+    heavyArmor,
+    lightArmor,
+    magicRobe,
+    shield
 }
 
 const skillsIcons = {
@@ -150,14 +163,25 @@ export const Features = () => {
                     {
                         races.map(({icon_grey, icon_color, raceName}, index) => (
                             <div className={style.raceWrapper}
-                                 onClick={() => setSelectRaceIndex(index)}
+                                 //onClick={() => setSelectRaceIndex(index)}
                                  key={index}
+                                 style={{
+                                     cursor: index === 0 ? "pointer" : "not-allowed"
+                                 }}
                             >
+
+
                                 <div className={clsx({
                                     [style.race]: true,
                                     [style.race_selected]: selectRaceIndex === index,
                                 })}
                                 >
+                                    { index !== 0 &&
+                                        <p className={style.disable}>
+                                            <p>Coming</p>
+                                            <p>soon</p>
+                                        </p>
+                                    }
                                     {
                                         selectRaceIndex === index
                                             ? <img src={icon_color}
@@ -228,6 +252,17 @@ export const Features = () => {
                                                                 {/*@ts-ignore*/}
                                                                 <img src={featuresIcons[el?.name]} alt=""/>
                                                                 {/*@ts-ignore*/}
+                                                                {
+                                                                    tabIndex === 2 &&
+                                                                    <img src={(index === 0 || index === 2) ? batteryFull : batteryNotFull}
+                                                                         alt=""
+                                                                         style={{
+                                                                             width: "50px",
+                                                                             height: "auto",
+                                                                             margin: "-10px 0"
+                                                                         }}
+                                                                    />
+                                                                }
                                                                 <p>{el.description}</p>
                                                             </div>
                                                         ))
@@ -267,6 +302,28 @@ export const Features = () => {
                                                 </div>
                                             </div>
                                         ))
+                                }
+                                {
+                                    [0, 1].map((el) => (
+                                        <div className={style.skillsItem} key={el}>
+                                            <div className={style.skillsItemIconCard}>
+                                                <img src={skillIconCard} alt=""/>
+                                                <p className={style.disableText1}>N/A</p>
+                                                <p className={style.disableText2}>Coming</p>
+                                                {/*@ts-ignore*/}
+                                                {/*<img src={skillsIcons[el.name]} alt="" className={style.skillsItemIcon}/>*/}
+                                                <CustomTooltip placement='top-end'
+                                                               title="Coming soon"
+                                                               arrow
+                                                >
+                                                    <div className={style.toolTip}>?</div>
+                                                </CustomTooltip>
+                                            </div>
+                                            <div className={style.skillName}>
+                                                soon
+                                            </div>
+                                        </div>
+                                    ))
                                 }
                             </div>
                         </div>

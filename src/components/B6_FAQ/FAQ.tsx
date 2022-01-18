@@ -13,6 +13,7 @@ import leftBottom from "../../assets/png/faq-left-bottom.png";
 import rightTop from "../../assets/png/faq-right-top.png";
 import {Accordion, AccordionDetails} from "@mui/material";
 import AccordionSummary from "@mui/material/AccordionSummary";
+import title from "../../assets/png/faq-title.png";
 
 export const iconLinks = [
     {src: src1, href: "#"},
@@ -76,9 +77,10 @@ export const FAQ = () => {
 
             <div className={style.top}>
                 <div className={style.inner}>
-                    <p className={style.title}>
-                        QUESTION & ANSWER
-                    </p>
+                    {/*<p className={style.title}>*/}
+                    {/*    QUESTION & ANSWER*/}
+                    {/*</p>*/}
+                    <img src={title} alt=""/>
                     <div className={style.accordionWrapper}>
                         <img src={leftBottom} alt="" className={style.leftBottom}/>
                         <img src={rightTop} alt="" className={style.rightTop}/>

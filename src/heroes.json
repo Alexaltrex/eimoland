@@ -6,19 +6,19 @@
     "features" : {
       "equipment": [
         {
-          "name": "oneHandedSword",
+          "name": "heavyArmor",
           "description": "Heavy armor"
         },
         {
-          "name": "twoHandedSword",
+          "name": "lightArmor",
           "description": "Light armor"
         },
         {
-          "name": "twoHandedSword",
+          "name": "magicRobe",
           "description": "Magic robe"
         },
         {
-          "name": "twoHandedSword",
+          "name": "shield",
           "description": "Shield"
         }
       ],
