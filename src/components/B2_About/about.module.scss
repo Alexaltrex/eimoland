@@ -1,11 +1,15 @@
 @import "../../assets/scss/app.scss";
 
 .about {
-  padding: 40px 20px;
+  padding: 40px 0px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include tablet() {
+    padding: 20px 0px 0px;
+  }
 
   @include desktop() {
     width: 100%;
@@ -21,16 +25,23 @@
     .title {
       font-style: normal;
       font-weight: bold;
-      font-size: 32px;
-      line-height: 40px;
+      font-size: 28px;
+      line-height: 34px;
       letter-spacing: 0.01em;
       color: #FAFAFA;
       text-align: center;
+      padding: 0px 38px;
 
       span {
         &:last-child {
           color: #CF5929;
         }
+      }
+
+      @include tablet() {
+        font-size: 38px;
+        line-height: 46px;
+        padding: 0px 99px;
       }
 
       @include desktop {
@@ -42,7 +53,15 @@
   }
 
   .divider {
-    margin-top: 20px;
+    margin-top: 30px;
+    width: 291px;
+    height: auto;
+
+    @include tablet() {
+      margin-top: 45px;
+      width: 350px;
+    }
+
 
     @include desktop() {
       margin-top: 35px;
@@ -58,9 +77,17 @@
     letter-spacing: 0.01em;
     color: #B8B8B8;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 35px;
+    padding: 0px 15px;
+
+    @include tablet() {
+      font-size: 21px;
+      margin-top: 45px;
+      padding: 0px 39px;
+    }
 
     @include desktop() {
+      margin-top: 20px;
       font-size: 24px;
       margin-top: 40px;
       width: 1110px;
@@ -68,33 +95,81 @@
   }
 
   .items {
-    align-self: normal;
     display: flex;
-    margin-top: 35px;
-    flex-direction: column;
     align-items: center;
+    margin-top: 45px;
+
+    @include tablet() {
+      margin-top: 55px;
+    }
 
     @include desktop() {
       margin-top: 70px;
-      flex-direction: row;
-      width: 1110px;
-      justify-content: space-between;
     }
 
+
     img {
-      height: 215px;
-      width: auto;
+      height: auto;
 
-      @include desktop() {
-        height: 215px;
-        width: auto;
-      }
+      &:nth-child(1) {
+        width: 99px;
 
-      &:not(:first-child) {
-        margin-top: 10px;
+        @include tablet() {
+          width: 171px;
+        }
 
         @include desktop() {
-          margin: 0;
+          width: 267px;
+        }
+      }
+
+      &:nth-child(2) {
+        width: 68px;
+
+        @include tablet() {
+          width: 132px;
+        }
+
+        @include desktop() {
+          width: 183px;
+        }
+      }
+
+      &:nth-child(3) {
+        width: 45px;
+
+        @include tablet() {
+          width: 79px;
+        }
+
+        @include desktop() {
+          width: 110px;
+        }
+
+      }
+
+      &:nth-child(4) {
+        width: 73px;
+
+        @include tablet() {
+          width: 137px;
+        }
+
+        @include desktop() {
+          width: 205px;
+        }
+      }
+
+
+      &:not(:first-child) {
+        margin-left: 18px;
+
+        @include tablet() {
+          margin-left: 55px;
+        }
+
+        @include desktop() {
+          margin-left: 115px;
         }
       }
 

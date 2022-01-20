@@ -43,6 +43,9 @@ import batteryNotFull from "../../assets/png/featuresIcons/batteryNotFull.png";
 import back from "../../assets/png/features-back.png";
 import gnome from "../../assets/png/features-gnome.png";
 import soon from "../../assets/png/features-soon.png";
+import skillsLabel from "../../assets/png/features-skills-label.png";
+import featuresLabel from "../../assets/png/features-features-label.png";
+import {CustomTooltip} from "./CustomTooltip";
 
 const featuresIcons = {
     oneHandedSword,
@@ -92,77 +95,31 @@ const tabMenu = [
     "FEATURES OF THE RACE",
 ];
 
-const CustomTooltip = styled(({className, ...props}: TooltipProps) => (
-    <Tooltip {...props} classes={{popper: className}}/>
-))(({theme}) => ({
-    [`& .${tooltipClasses.tooltip}`]: {
-        backgroundColor: "#232327",
-        opacity: 0.95,
-        "box-shadow": "0px 0px 14px rgba(0, 0, 0, 0.52)",
-        "border-radius": "5px",
-        "font-family": "Comfortaa",
-        "font-style": "normal",
-        "font-weight": "normal",
-        "font-size": "14px",
-        "line-height": "140%",
-        color: "#B8B8B8",
-        padding: "25px 30px",
-        "max-width": "378px",
-        boxSizing: "border-box",
-    },
-    [`& .${tooltipClasses.arrow}`]: {
-        color: "#232327",
-        opacity: 0.95,
-    }
-}));
-
 export const Features = () => {
     const [selectRaceIndex, setSelectRaceIndex] = useState(0);
     const [tabIndex, setTabIndex] = useState(0);
-    const [skillIndex, setSkillIndex] = useState(0);
+    const [skillType, setSkillType] = useState("active");
 
     const [open, setOpen] = useState(false);
     const heroes = JSON.stringify(heroesJson);
     const heroesDB = JSON.parse(heroes)
     const currentHero: any = Object.values(heroesDB)[selectRaceIndex];
     const currentFeature: any = Object.values(currentHero.features)[tabIndex];
-    const currentSkill: any = Object.values(currentHero.skills)[skillIndex];
+    //const currentSkill: any = Object.values(currentHero.skills)[skillType];
 
-    let styleSelected = [
-        {
-            transform: 'translate(-50%, 50%)',
-            left: 'calc(50% - 27px)',
-            bottom: "50%",
-        },
-        {
-            transform: 'translate(-50%, 50%)',
-            left: 'calc(50% + 0px)',
-            bottom: "50%",
-        },
-        {
-            transform: 'translate(-50%, 50%)',
-            left: 'calc(50% + 6px)',
-            bottom: "50%",
-        },
-        {
-            transform: 'translate(-50%, 50%)',
-            left: 'calc(50% - 0px)',
-            bottom: 'calc(50% + 7px)',
-        }
-    ];
-
+    // @ts-ignore
     return (
         <section className={style.features}>
             <div className={style.back}
-                 style={{ backgroundImage: `url(${back})` }}
+                 style={{backgroundImage: `url(${back})`}}
             />
 
             <div className={style.inner}>
 
-                <div className={style.racesBox}>
+                <div className={style.racesItems}>
                     {
                         races.map(({icon_grey, icon_color, raceName}, index) => (
-                            <div className={style.raceWrapper}
+                            <div className={style.racesItem}
                                  //onClick={() => setSelectRaceIndex(index)}
                                  key={index}
                                  style={{
@@ -172,32 +129,30 @@ export const Features = () => {
 
 
                                 <div className={clsx({
-                                    [style.race]: true,
-                                    [style.race_selected]: selectRaceIndex === index,
+                                    [style.iconWrapper]: true,
+                                    [style.iconWrapper_selected]: selectRaceIndex === index,
                                 })}
                                 >
-                                    { index !== 0 &&
-                                        <p className={style.disable}>
-                                            <p>Coming</p>
-                                            <p>soon</p>
-                                        </p>
+                                    {index !== 0 &&
+                                    <p className={style.disable}>
+                                        <p>Coming</p>
+                                        <p>soon</p>
+                                    </p>
                                     }
                                     {
                                         selectRaceIndex === index
                                             ? <img src={icon_color}
                                                    alt=""
-                                                   style={styleSelected[selectRaceIndex]}
+                                                   className={clsx(style.iconSelected, style[`iconSelected${index}`])}
+                                                //style={styleSelected[selectRaceIndex]}
                                             />
                                             : <img src={icon_grey}
                                                    alt=""
-                                                   style={{
-                                                       transform: 'translate(-50%, 50%)',
-                                                       bottom: "50%",
-                                                       left: "50%",
-                                                   }}
+                                                   className={style.icon}
                                             />
                                     }
                                 </div>
+
                                 <p className={clsx({
                                     [style.raceName]: true,
                                     [style.raceName_selected]: selectRaceIndex === index,
@@ -220,67 +175,75 @@ export const Features = () => {
                     <div className={style.rightBlock}>
                         <p className={style.title}>FEATURES</p>
 
-                        <div className={style.tabMenu}>
-                            {
-                                tabMenu.map((el, index) => (
-                                    <p key={index}
-                                       className={clsx({
-                                           [style.tabMenuItem]: true,
-                                           [style.tabMenuItem_selected]: tabIndex === index,
-                                       })}
-                                       onClick={() => setTabIndex(index)}
-                                    >
-                                        {el}
-                                    </p>
-                                ))
-                            }
-                        </div>
+                        <div className={style.tabBlockWrapper}>
+                            <img src={featuresLabel} alt="" className={style.featuresLabel}/>
 
-                        <div className={style.content}>
-                            <div className={style.contentBack} style={{ backgroundImage: `url(${contentBack})` }}/>
-                            <div className={style.mask}/>
-
-                            <div className={style.contentInner}>
-                                <div className={style.inner2}>
-                                    {
-                                        currentFeature.length
-                                            ? (
-                                                <>
-                                                    {
-                                                        (currentFeature as any[]).map((el, index) => (
-                                                            <div className={style.currentFeatureItem} key={index}>
-                                                                {/*@ts-ignore*/}
-                                                                <img src={featuresIcons[el?.name]} alt=""/>
-                                                                {/*@ts-ignore*/}
-                                                                {
-                                                                    tabIndex === 2 &&
-                                                                    <img src={(index === 0 || index === 2) ? batteryFull : batteryNotFull}
-                                                                         alt=""
-                                                                         style={{
-                                                                             width: "50px",
-                                                                             height: "auto",
-                                                                             margin: "-10px 0"
-                                                                         }}
-                                                                    />
-                                                                }
-                                                                <p>{el.description}</p>
-                                                            </div>
-                                                        ))
-                                                    }
-                                                </>
-                                            )
-                                            : <p className={style.empty}>Soon...</p>
-                                    }
-                                </div>
-
+                            <div className={style.tabMenu}>
+                                {
+                                    tabMenu.map((el, index) => (
+                                        <p key={index}
+                                           className={clsx({
+                                               [style.tabMenuItem]: true,
+                                               [style.tabMenuItem_selected]: tabIndex === index,
+                                           })}
+                                           onClick={() => setTabIndex(index)}
+                                        >
+                                            {el}
+                                        </p>
+                                    ))
+                                }
                             </div>
 
-                            <img src={leftBottom} alt="" className={style.leftBottom}/>
-                            <img src={rightTop} alt="" className={style.rightTop}/>
+                            <div className={style.content}>
+                                <div className={style.contentBack} style={{backgroundImage: `url(${contentBack})`}}/>
+                                <div className={style.mask}/>
+
+                                <div className={style.contentInner}>
+                                    <div className={style.inner2}>
+                                        {
+                                            currentFeature.length
+                                                ? (
+                                                    <>
+                                                        {
+                                                            (currentFeature as any[]).map((el, index) => (
+                                                                <div className={style.currentFeatureItem} key={index}>
+                                                                    {/*@ts-ignore*/}
+                                                                    <img src={featuresIcons[el?.name]} alt=""
+                                                                         className={style.icon}/>
+                                                                    {/*@ts-ignore*/}
+                                                                    {
+                                                                        tabIndex === 2 &&
+                                                                        <img
+                                                                            src={(index === 0 || index === 2) ? batteryFull : batteryNotFull}
+                                                                            alt=""
+                                                                            style={{
+                                                                                width: "50px",
+                                                                                height: "auto",
+                                                                                margin: "-10px 0"
+                                                                            }}
+                                                                        />
+                                                                    }
+                                                                    <p>{el.description}</p>
+                                                                </div>
+                                                            ))
+                                                        }
+                                                    </>
+                                                )
+                                                : <p className={style.empty}>Soon...</p>
+                                        }
+                                    </div>
+
+                                </div>
+
+                                <img src={leftBottom} alt="" className={style.leftBottom}/>
+                                <img src={rightTop} alt="" className={style.rightTop}/>
+                            </div>
+
                         </div>
 
+
                         <div className={style.skills}>
-                            <p className={style.skillsTitle}>SKILLS</p>
+                            <img src={skillsLabel} alt="" className={style.skillsLabel}/>
                             <div className={style.skillsItems}>
                                 {
                                     (Object.values(currentHero.skills) as any[])
@@ -289,13 +252,14 @@ export const Features = () => {
                                                 <div className={style.skillsItemIconCard}>
                                                     <img src={skillIconCard} alt=""/>
                                                     {/*@ts-ignore*/}
-                                                    <img src={skillsIcons[el.name]} alt="" className={style.skillsItemIcon}/>
-                                                    <CustomTooltip placement='top-end'
-                                                                   title={el.description}
-                                                                   arrow
-                                                    >
+                                                    <img src={skillsIcons[el.name]} alt=""
+                                                         className={style.skillsItemIcon}/>
+
+                                                    <CustomTooltip title={el.description}>
                                                         <div className={style.toolTip}>?</div>
                                                     </CustomTooltip>
+
+
                                                 </div>
                                                 <div className={style.skillName}>
                                                     {el.title}
@@ -308,19 +272,16 @@ export const Features = () => {
                                         <div className={style.skillsItem} key={el}>
                                             <div className={style.skillsItemIconCard}>
                                                 <img src={skillIconCard} alt=""/>
-                                                <p className={style.disableText1}>N/A</p>
-                                                <p className={style.disableText2}>Coming</p>
+                                                <p className={style.disableText2}>Coming soon</p>
                                                 {/*@ts-ignore*/}
                                                 {/*<img src={skillsIcons[el.name]} alt="" className={style.skillsItemIcon}/>*/}
-                                                <CustomTooltip placement='top-end'
-                                                               title="Coming soon"
-                                                               arrow
+                                                <CustomTooltip title="Coming soon"
                                                 >
                                                     <div className={style.toolTip}>?</div>
                                                 </CustomTooltip>
                                             </div>
                                             <div className={style.skillName}>
-                                                soon
+                                                N/A
                                             </div>
                                         </div>
                                     ))
@@ -348,42 +309,104 @@ export const Features = () => {
 
                 <div className="skills-modal-menu">
                     {
-                        //["active", "passive"]
-                        (Object.values(currentHero.skills) as any[])
+                        ["active", "passive"]
+                            //(Object.values(currentHero.skills) as any[])
                             .map((el, index) => (
-                            <div className={clsx({
-                                ["skills-modal-menu-item"]: true,
-                                ["skills-modal-menu-item_selected"]: skillIndex === index,
-                            })}
-                                 key={index}
-                                 onClick={() => setSkillIndex(index)}
-                            >
-                                {el.type}
-                            </div>
-                        ))
+                                <div className={clsx({
+                                    ["skills-modal-menu-item"]: true,
+                                    ["skills-modal-menu-item_selected"]: skillType === el,
+                                })}
+                                     key={index}
+                                     onClick={() => setSkillType(el)}
+                                >
+                                    {el}
+                                </div>
+                            ))
                     }
                 </div>
 
-                {
-                    currentSkill &&
-                    <div className="skills-modal-content">
-                        <div className="skills-modal-iconBlock">
-                            <div className="skills-modal-iconWrapper">
-                                <img src={skillIconCard} alt="" className="skills-modal-iconWrapper-back"/>
-                                {/*@ts-ignore*/}
-                                <img src={skillsIcons[currentSkill.name]} alt=""
-                                     className="skills-modal-iconWrapper-icon"/>
-                            </div>
-                            <p className="skills-modal-iconBlock-name">
-                                {/*@ts-ignore*/}
-                                {currentSkill.name}
-                            </p>
 
+                <div className="skills-modal-content">
+                    {
+                        skillType === "active" &&
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "column"
+                        }}>
+                            {
+                                [
+                                    {
+                                        name: 'mining',
+                                        description: 'Some places of Eimolad are rich in minerals. Dwarves have been able to mine them since ancient times.'
+                                    },
+                                    {
+                                        name: 'craft',
+                                        description: 'Dwarves Elders inherited from their ancestors the secrets of Weapon & Equipment Production.'
+                                    },
+                                ]
+                                    .map((el, index) => (
+                                        <div key={index} className="skill-block">
+                                            <div className="skills-modal-iconBlock">
+                                                <div className="skills-modal-iconWrapper">
+                                                    <img src={skillIconCard} alt=""
+                                                         className="skills-modal-iconWrapper-back"/>
+                                                    {/*@ts-ignore*/}
+                                                    <img src={skillsIcons[el.name]} alt=""
+                                                         className="skills-modal-iconWrapper-icon"/>
+                                                </div>
+                                                <p className="skills-modal-iconBlock-name">
+                                                    {el.name}
+                                                </p>
+
+                                            </div>
+                                            <div className="skills-modal-description">{el.description}</div>
+                                        </div>
+
+                                    ))
+                            }
                         </div>
+                    }
 
-                        <div className="skills-modal-description">{currentSkill.description}</div>
-                    </div>
-                }
+                    {
+                        skillType === "passive" &&
+                        <div style={{
+                            display: "flex",
+                            flexDirection: "column"
+                        }}>
+                            {
+                                [
+                                    {
+                                        name: 'N/A',
+                                        description: ''
+                                    },
+                                    {
+                                        name: 'N/A',
+                                        description: ''
+                                    },
+                                ]
+                                    .map((el, index) => (
+                                        <div key={index} className="skill-block">
+                                            <div className="skills-modal-iconBlock">
+                                                <div className="skills-modal-iconWrapper">
+                                                    <img src={skillIconCard} alt=""
+                                                         className="skills-modal-iconWrapper-back"/>
+                                                    {/*@ts-ignore*/}
+                                                    {/*<img src={skillsIcons[el.name]} alt=""*/}
+                                                    {/*     className="skills-modal-iconWrapper-icon"/>*/}
+                                                </div>
+                                                <p className="skills-modal-iconBlock-name">
+                                                    {el.name}
+                                                </p>
+
+                                            </div>
+                                            <div className="skills-modal-description">{el.description}</div>
+                                        </div>
+
+                                    ))
+                            }
+                        </div>
+                    }
+                </div>
 
 
                 <div className="skills-modal-close"

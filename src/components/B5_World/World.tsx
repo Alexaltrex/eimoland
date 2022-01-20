@@ -44,17 +44,19 @@ export const World = () => {
                         their attacks.</p>
                 </div>
                 <div className={style.btnBlock}>
-                    <img src={left} alt=""/>
+                    <img src={left} alt="" className={style.btnSideImg}/>
                     <p onClick={() => setOpen(true)}
                             className={style.button}
                     >
                         Read more
                     </p>
-                    <img src={right} alt=""/>
+                    <img src={right} alt="" className={style.btnSideImg}/>
                 </div>
                 <img src={img1} alt="" className={style.img1}/>
                 <img src={img2} alt="" className={style.img2}/>
             </div>
+
+
             <Modal isOpen={open}
                    onRequestClose={() => setOpen(false)}
                    className="world-modal"

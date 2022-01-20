@@ -62,7 +62,7 @@
       {
         "name": "mining",
         "title": "mining",
-        "type": "passive",
+        "type": "active",
         "active": true,
         "description": "Allows you to extract additional loot from killed mobs."
       },

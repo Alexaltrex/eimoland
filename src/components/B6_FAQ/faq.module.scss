@@ -45,29 +45,54 @@
     .inner {
       @include center();
 
-      .title {
-        font-style: normal;
-        font-weight: 900;
-        font-size: 60px;
-        line-height: 120%;
-        text-align: center;
-        letter-spacing: 0.03em;
-        color: #1D1D1D;
-        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+      .titleMobile {
+        width: 345px;
+        height: auto;
+
+        @include tablet() {
+          width: 587px;
+        }
 
         @include desktop() {
-          font-size: 102px;
+          display: none;
         }
       }
 
+      .titleDesktop {
+        @include onlyDesktop();
+        width: 1110px;
+        height: auto;
+      }
+
+
+      //.title {
+      //  font-style: normal;
+      //  font-weight: 900;
+      //  font-size: 60px;
+      //  line-height: 120%;
+      //  text-align: center;
+      //  letter-spacing: 0.03em;
+      //  color: #1D1D1D;
+      //  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+      //
+      //  @include desktop() {
+      //    font-size: 102px;
+      //  }
+      //}
+
       .accordionWrapper {
-        margin-top: 10px;
+        margin-top: 44px;
         position: relative;
         background: #1c1c1c;
         opacity: 0.8;
         box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.45);
         padding: 15px;
-        width: calc(100% - 40px);
+        width: calc(100% - 30px);
+
+        @include tablet() {
+          margin-top: 60px;
+          width: calc(100% - 80px);
+        }
 
         @include desktop() {
           width: 920px;
@@ -76,8 +101,12 @@
 
         .leftBottom, .rightTop {
           position: absolute;
-          width: 60px;
+          width: 73px;
           height: auto;
+
+          @include tablet() {
+            width: 101px;
+          }
 
           @include desktop() {
             width: 121px;
@@ -96,10 +125,14 @@
 
         .inner {
           border: 1px solid #313131;
-          padding: 15px 30px;
+          padding: 25px 20px;
+
+          @include tablet() {
+            padding: 40px 45px;
+          }
 
           @include desktop() {
-            padding: 25px 80px;
+            padding: 45px 80px;
           }
 
         }
@@ -112,6 +145,7 @@
   }
 
   .footer {
+    flex-shrink: 0;
     position: relative;
     z-index: 3;
     display: flex;
@@ -120,32 +154,53 @@
     position: relative;
     z-index: 2;
 
-    .img {
-      width: calc(100vw - 40px);
-      height: auto;
+    .divider {
+      width: 344px;
+      height: 11px;
+
+      @include tablet() {
+        width: 690px;
+        height: 23px;
+      }
+
+      @include desktop() {
+        width: 1782px;
+        height: 23px;
+      }
+
+
     }
 
     .links {
       display: flex;
-      margin: 10px 0px;
+      margin: 35px 0px;
 
-      @include desktop() {
-        margin: 20px 0px;
+      @include tablet() {
+        margin: 40px 0px;
       }
 
       .link {
         display: block;
         text-decoration: none;
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         background: #292929;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
         @include center();
 
-        @include desktop() {
+        @include tablet() {
           width: 60px;
           height: 60px;
+        }
+
+        &:not(:first-child) {
+          margin-left: 10px;
+
+          @include desktop() {
+            margin-left: 35px;
+          }
+
         }
 
         img {
@@ -154,18 +209,7 @@
           height: auto;
         }
 
-        &:not(:first-child) {
-          margin-left: 10px;
-
-          @include desktop() {
-            margin-left: 25px;
-          }
-
-        }
       }
     }
-
   }
-
-
 }

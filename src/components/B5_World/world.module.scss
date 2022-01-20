@@ -1,7 +1,7 @@
 @import "../../assets/scss/app.scss";
 
 .world {
-  padding: 40px 20px;
+  padding: 40px 15px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,10 @@
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
+
+  @include tablet() {
+    padding: 40px;
+  }
 
   @include desktop() {
     width: 100%;
@@ -27,11 +31,16 @@
       font-family: Overlock;
       font-style: normal;
       font-weight: bold;
-      font-size: 40px;
-      line-height: 46px;
+      font-size: 28px;
+      line-height: 34px;
       letter-spacing: 0.01em;
       color: #FAFAFA;
       text-align: center;
+
+      @include tablet() {
+        font-size: 38px;
+        line-height: 46px;
+      }
 
       @include desktop() {
         font-size: 48px;
@@ -45,11 +54,13 @@
     }
 
     .texts {
-      margin-top: 30px;
+      margin-top: 45px;
 
+      @include tablet() {
+        margin-top: 50px;
+      }
 
       @include desktop() {
-        margin-top: 50px;
         width: 1110px;
       }
 
@@ -57,7 +68,7 @@
         font-family: Comfortaa;
         font-style: normal;
         font-weight: 300;
-        font-size: 18px;
+        font-size: 14px;
         line-height: 160%;
         letter-spacing: 0.01em;
         color: #B8B8B8;
@@ -65,22 +76,45 @@
         &:not(:first-child) {
           margin-top: 20px;
         }
+
+        @include tablet() {
+          font-size: 14px;
+        }
+
+        @include desktop() {
+          font-size: 18px;
+        }
       }
 
     }
 
     .btnBlock {
-      margin-top: 20px;
+      margin-top: 35px;
       display: flex;
       align-items: center;
       justify-content: center;
 
-      @include desktop() {
-        margin-top: 40px;
+      @include tablet() {
+        margin-top: 56px;
       }
 
-      img {
-        @include onlyDesktop();
+      @include desktop() {
+        margin-top: 37px;
+      }
+
+      .btnSideImg {
+        width: 120px;
+        height: 18px;
+
+        @include tablet() {
+          width: 270px;
+          height: 44px;
+        }
+
+        @include desktop() {
+          width: 445px;
+          height: 72px;
+        }
       }
 
       .button {
@@ -93,24 +127,31 @@
         font-size: 18px;
         line-height: 160%;
         letter-spacing: 0.01em;
-        //text-decoration: underline;
+        margin: 0px 13px;
         @include text-gradient(#D24328, #EC832E);
         border-bottom: 1px solid #EC832E;
 
-        @include desktop() {
-          margin: 0px 60px;
+        @include tablet() {
           font-size: 24px;
+          margin: 0px 22px;
+        }
+
+        @include desktop() {
+          margin: 0px 57px;
+
         }
       }
     }
 
     .img1 {
+      @include onlyDesktop();
       position: absolute;
       bottom: -210px;
       left: -450px;
     }
 
     .img2 {
+      @include onlyDesktop();
       position: absolute;
       right: -470px;
       top: -220px;

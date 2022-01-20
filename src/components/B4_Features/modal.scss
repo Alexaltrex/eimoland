@@ -60,9 +60,13 @@
   &-item {
     cursor: pointer;
     text-align: center;
-    font-family: Comfortraa-Bold, serif;
-    color: #b8b8b8;
-    text-transform: capitalize;
+    font-family: Comfortaa;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #FAFAFA;
 
     &_selected {
       color: #CF5929;
@@ -77,52 +81,62 @@
     padding: 10px;
     display: flex;
 
-    .skills-modal-iconBlock {
+    .skill-block {
       display: flex;
-      flex-direction: column;
-      //align-items: center;
 
-      .skills-modal-iconWrapper {
-        width: 100px;
-        height: 100px;
-        position: relative;
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
 
-        .skills-modal-iconWrapper-back {
+      .skills-modal-iconBlock {
+        display: flex;
+        flex-direction: column;
+        //align-items: center;
+
+        .skills-modal-iconWrapper {
           width: 100px;
           height: 100px;
+          position: relative;
+
+          .skills-modal-iconWrapper-back {
+            width: 100px;
+            height: 100px;
+          }
+
+          .skills-modal-iconWrapper-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60%;
+            transform: translate(-50%, -50%);
+          }
         }
 
-        .skills-modal-iconWrapper-icon {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 60%;
-          transform: translate(-50%, -50%);
+        &-name {
+          margin-top: 10px;
+          background: #494949;
+          opacity: 0.8;
+          border-radius: 5px;
+          padding: 5px 0px;
+          text-align: center;
+          font-family: Comfortaa;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 16px;
+          color: #FAFAFA;
+          text-transform: uppercase;
         }
+
       }
 
-      &-name {
-        margin-top: 10px;
-        background: #494949;
-        opacity: 0.8;
-        border-radius: 5px;
-        padding: 5px 0px;
-        text-align: center;
-        font-family: Comfortaa;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 16px;
-        color: #FAFAFA;
-        text-transform: uppercase;
+      .skills-modal-description {
+        align-self: center;
+        margin-left: 20px;
       }
-
     }
 
-    .skills-modal-description {
-      align-self: center;
-      margin-left: 20px;
-    }
+
   }
 
   &-close {

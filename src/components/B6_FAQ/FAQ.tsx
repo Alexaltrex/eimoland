@@ -13,7 +13,9 @@ import leftBottom from "../../assets/png/faq-left-bottom.png";
 import rightTop from "../../assets/png/faq-right-top.png";
 import {Accordion, AccordionDetails} from "@mui/material";
 import AccordionSummary from "@mui/material/AccordionSummary";
-import title from "../../assets/png/faq-title.png";
+import titleMobile from "../../assets/png/faq-title-mobile.png";
+import titleDesktop from "../../assets/png/faq-title-desktop.png";
+import {theme} from "../../theme";
 
 export const iconLinks = [
     {src: src1, href: "#"},
@@ -80,7 +82,9 @@ export const FAQ = () => {
                     {/*<p className={style.title}>*/}
                     {/*    QUESTION & ANSWER*/}
                     {/*</p>*/}
-                    <img src={title} alt=""/>
+                    <img src={titleMobile} alt="" className={style.titleMobile}/>
+                    <img src={titleDesktop} alt="" className={style.titleDesktop}/>
+
                     <div className={style.accordionWrapper}>
                         <img src={leftBottom} alt="" className={style.leftBottom}/>
                         <img src={rightTop} alt="" className={style.rightTop}/>
@@ -95,8 +99,14 @@ export const FAQ = () => {
                                                    boxShadow: "none",
                                                    minHeight: 0,
                                                    "&:not(:first-child)": {
-                                                       marginTop: "20px"
-                                                   }
+                                                       marginTop: "20px",
+                                                       [theme.breakpoints.up('tablet')]: {
+                                                           marginTop: "25px"
+                                                       },
+                                                       [theme.breakpoints.up('desktop')]: {
+                                                           marginTop: "30px"
+                                                       },
+                                                   },
                                                }}
                                     >
                                         <AccordionSummary
@@ -115,14 +125,20 @@ export const FAQ = () => {
                                                 "& .MuiAccordionSummary-content": {
                                                     margin: "0!important",
                                                     color: expandedIndex === index ? "#CF5929" : "#FAFAFA",
-                                                }
+                                                },
+                                                [theme.breakpoints.up('tablet')]: {
+                                                    fontSize: "21px",
+                                                },
+                                                [theme.breakpoints.up('desktop')]: {
+                                                    fontSize: "24px",
+                                                },
                                             }}
                                         >
                                             {summary}
                                         </AccordionSummary>
                                         <AccordionDetails sx={{
                                             padding: 0,
-                                            marginTop: "15px",
+                                            marginTop: "14px",
                                             fontFamily: "Comfortaa",
                                             fontStyle: "normal",
                                             fontWeight: "300",
@@ -130,6 +146,12 @@ export const FAQ = () => {
                                             lineHeight: "160%",
                                             letterSpacing: "0.01em",
                                             color: "#B8B8B8",
+                                            [theme.breakpoints.up('tablet')]: {
+                                                fontSize: "16px",
+                                            },
+                                            [theme.breakpoints.up('desktop')]: {
+                                                fontSize: "18px",
+                                            },
                                         }}>
                                             {details}
                                         </AccordionDetails>
@@ -144,7 +166,9 @@ export const FAQ = () => {
             </div>
 
             <footer className={style.footer}>
-                <img src={footer} alt="" className={style.img}/>
+
+                <img src={footer} alt="" className={style.divider}/>
+
                 <div className={style.links}>
                     {
                         iconLinks.map(({src, href}, index) => (
@@ -154,6 +178,7 @@ export const FAQ = () => {
                         ))
                     }
                 </div>
+
             </footer>
 
 

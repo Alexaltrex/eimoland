@@ -1,7 +1,7 @@
 @import "../../assets/scss/app.scss";
 
 .home {
-  padding: 40px 20px;
+  padding: 90px 0px 50px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -10,8 +10,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden;
+
+  @include tablet() {
+    padding: 96px 0px 82px;
+  }
 
   @include desktop() {
+    padding: 0;
     width: 100%;
     height: 100vh;
     justify-content: center;
@@ -24,8 +30,12 @@
     position: relative;
 
     .title {
-      width: 100%;
+      width: calc(100% - 2 * 17px);
       height: auto;
+
+      @include tablet() {
+        width: calc(100% - 2 * 43px);
+      }
 
       @include desktop() {
         width: 893px;
@@ -33,9 +43,24 @@
       }
     }
 
-    .races {
+    .heroesPhoneImg {
       width: 100%;
       height: auto;
+
+      @include tablet() {
+        display: none;
+      }
+    }
+
+    .heroesImg {
+      display: none;
+
+      @include tablet() {
+        display: block;
+        width: 120%;
+        height: auto;
+        margin-top: -30px;
+      }
 
       @include desktop() {
         margin-top: -125px;
@@ -50,6 +75,7 @@
       justify-content: center;
       position: relative;
       z-index: 2;
+      margin-top: -40px;
 
       @include desktop() {
         margin-top: -40px;
@@ -108,7 +134,19 @@
       }
 
       .btnAside {
-        @include onlyDesktop();
+        display: none;
+
+        @include tablet() {
+          display: block;
+          width: 210px;
+          height: 19px;
+        }
+
+        @include desktop() {
+          width: 313px;
+          height: 28.23px;
+        }
+
       }
 
     }

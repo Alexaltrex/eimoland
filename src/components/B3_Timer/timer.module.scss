@@ -1,160 +1,255 @@
 @import "../../assets/scss/app.scss";
 
 .timer {
-  padding: 40px 20px;
+  padding: 0px 0px 0px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  overflow: hidden;
+
+  @include tablet() {
+    padding: 0px 0px 0px;
+  }
 
   @include desktop() {
     width: 100%;
     height: 100vh;
     justify-content: center;
+    align-items: center;
   }
 
   .inner {
     display: flex;
     flex-direction: column;
-    align-items: center;
-
 
     @include desktop() {
+      align-items: center;
       flex-direction: row;
-      width: 1100px;
+      width: 1160px;
+      margin: 0 auto;
+
     }
 
-    .leftBlock {
+    .innerLeft {
 
       @include desktop() {
-        width: 587px;
+        width: 50%;
       }
 
-      .title {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 30px;
-        line-height: 36px;
-        letter-spacing: 0.01em;
-        color: #FAFAFA;
-        text-align: center;
-
-        span:nth-child(2) {
-          color: #CF5929;
-        }
-
-        @include desktop() {
-          text-align: left;
-          font-size: 36px;
-          line-height: 44px;
-        }
-      }
-
-      .text {
-        font-family: Comfortaa;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 140%;
-        letter-spacing: 0.01em;
-        color: #B8B8B8;
-        margin-top: 30px;
-        text-align: center;
-
-        @include desktop() {
-          text-align: left;
-          font-size: 18px;
-          line-height: 140%;
-          margin-top: 45px;
-        }
-      }
-
-      .timerWrapper {
-        margin-top: 45px;
-        display: flex;
+      .topBlock {
+        position: relative;
         display: flex;
         flex-direction: column;
-        align-items: center;
 
-        @include desktop() {
-          flex-direction: row;
+        @include tablet() {
+          flex-direction: row-reverse;
+          align-items: flex-end;
         }
 
-        .timerSubWrapper {
-          display: flex;
 
-          &:not(:first-child) {
-            margin-top: 20px;
-            margin-left: 15px;
+        .imgWrapper {
+          align-self: center;
+          position: relative;
+          height: 537px;
+          width: 751px;
+          transform: translateX(-0%);
+          //background: red;
+          //overflow: hidden;
+
+          @include tablet() {
+            height: 507px;
+            width: 50%;
+          }
+
+          @include desktop() {
+            display: none;
+          }
+
+          img {
+            pointer-events: none;
+            width: auto;
+            height: 537px;
+
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @include tablet() {
+              height: 507px;
+              width: 711px;
+
+            }
+
+          }
+
+        }
+
+        .textWrapper {
+          width: 100%;
+
+          @include tablet() {
+            width: 50%;
+          }
+
+          @include desktop() {
+            width: 100%;
+          }
+
+          .title {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 21px;
+            line-height: 26px;
+            letter-spacing: 0.01em;
+            color: #FAFAFA;
+            padding: 0px 16px;
+
+            span:nth-child(2) {
+              color: #CF5929;
+            }
+
+            @include tablet() {
+              font-size: 24px;
+              line-height: 29px;
+              padding: 0 0 0 38px
+            }
 
             @include desktop() {
-              margin-top: 0px;
+              font-size: 36px;
+              line-height: 44px;
+              padding: 0;
+            }
+          }
+
+          .text {
+            font-family: Comfortaa;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 140%;
+            letter-spacing: 0.01em;
+            color: #B8B8B8;
+            margin-top: 35px;
+            padding: 0px 16px;
+
+            @include tablet() {
+              font-size: 14px;
+              padding: 0 0 0 38px;
+            }
+
+            @include desktop() {
+              font-size: 18px;
+              line-height: 140%;
+              margin-top: 45px;
+              padding: 0;
             }
           }
         }
 
       }
 
-      .socialBlock {
-        position: relative;
-        z-index: 1;
-        margin-top: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      .bottomBlock {
 
-        @include desktop() {
-          margin-top: 50px;
-          flex-direction: row;
-        }
-
-
-        p {
-          font-family: Comfortaa;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 20px;
-          line-height: 24px;
-          letter-spacing: 0.01em;
-          color: #FAFAFA;
-          white-space: nowrap;
-
-          @include desktop() {
-            font-size: 24px;
-            line-height: 27px;
-          }
-        }
-
-        .links {
+        .timerWrapper {
           display: flex;
-          margin-top: 20px;
+          justify-content: center;
+          margin-top: 40px;
 
-          @include desktop() {
-            margin-top: 0px;
-            margin-left: 30px;
+          @include tablet() {
+            justify-content: flex-start;
+            padding-left: 39px;
           }
 
-          .link {
-            display: block;
-            text-decoration: none;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #292929;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
-            @include center();
+          @include desktop() {
+            margin-top: 45px;
+            padding-left: 0px;
+          }
 
-            &:not(:first-child) {
-              margin-left: 25px;
+          .timerBlockWrapper {
+              &:not(:first-child) {
+                margin-left: 15px;
+
+                @include tablet() {
+                  margin-left: 17px;
+                }
+              }
+          }
+
+        }
+
+        .socialBlock {
+          position: relative;
+          z-index: 1;
+          margin-top: 35px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          @include tablet() {
+            align-items: flex-start;
+            padding-left: 38px;
+          }
+
+          @include desktop() {
+            margin-top: 50px;
+          }
+
+          p {
+            font-family: Comfortaa;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: 0.01em;
+            color: #FAFAFA;
+            white-space: nowrap;
+
+            @include tablet() {
+              font-size: 18px;
+              line-height: 20px;
+            }
+
+
+            @include desktop() {
+              font-size: 24px;
+              line-height: 27px;
             }
           }
-        }
 
+          .links {
+            display: flex;
+            margin-top: 20px;
+
+            .link {
+              display: block;
+              text-decoration: none;
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              background: #292929;
+              box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+              @include center();
+
+              @include tablet() {
+                width: 60px;
+                height: 60px;
+              }
+
+
+
+              &:not(:first-child) {
+                margin-left: 25px;
+              }
+            }
+          }
+
+        }
       }
 
     }
 
-    .rightBlock {
+    .innerRight {
       position: relative;
 
       @include desktop() {
@@ -162,20 +257,24 @@
       }
 
       img {
-        width: 100%;
-        pointer-events: none;
+        display: none;
+        width: 974px;
+        height: 695px;
 
         @include desktop() {
+          display: block;
           position: absolute;
-          left: -150px;
           top: 50%;
-          width: auto;
-          transform: translateY(-50%);
-        }
+          left: 0;
+          transform: translate(-125px, -50%);
 
+        }
       }
 
     }
+
+
+
 
   }
 }
