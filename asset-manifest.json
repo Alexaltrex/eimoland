@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/eimoland/static/css/main.41d106f5.css",
+    "main.css": "/eimoland/static/css/main.f61c09f7.css",
     "main.js": "/eimoland/static/js/main.09c6132e.js",
     "static/js/787.eb43d37c.chunk.js": "/eimoland/static/js/787.eb43d37c.chunk.js",
     "static/media/features-back.png": "/eimoland/static/media/features-back.fd51ddb690a7f4711fdf.png",
@@ -41,12 +41,12 @@
     "static/media/magicRobe.png": "/eimoland/static/media/magicRobe.40c876cef0cf1e829c96.png",
     "static/media/twoHandedAxe.png": "/eimoland/static/media/twoHandedAxe.29c84ad0454db1e7a983.png",
     "index.html": "/eimoland/index.html",
-    "main.41d106f5.css.map": "/eimoland/static/css/main.41d106f5.css.map",
+    "main.f61c09f7.css.map": "/eimoland/static/css/main.f61c09f7.css.map",
     "main.09c6132e.js.map": "/eimoland/static/js/main.09c6132e.js.map",
     "787.eb43d37c.chunk.js.map": "/eimoland/static/js/787.eb43d37c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.41d106f5.css",
+    "static/css/main.f61c09f7.css",
     "static/js/main.09c6132e.js"
   ]
 }
