@@ -46,6 +46,7 @@ import soon from "../../assets/png/features-soon.png";
 import skillsLabel from "../../assets/png/features-skills-label.png";
 import featuresLabel from "../../assets/png/features-features-label.png";
 import {CustomTooltip} from "./CustomTooltip";
+import {BatteryIcon, ValueType} from "./BatteryIcon/BatteryIcon";
 
 const featuresIcons = {
     oneHandedSword,
@@ -94,16 +95,6 @@ const tabMenu = [
     "WEAPONS",
     "FEATURES OF THE RACE",
 ];
-
-const toolTips = {
-    oneHandedSword: "+4 Attack",
-    twoHandedSword: "+5 Attack, -1 Attack Speed, -3 Move Speed",
-    twoHandedAxe: "+7 Attack, -2 Attack Speed, -4 Move Speed",
-    mace: "+11 Attack, -5 Attack Speed, -5 Move Speed",
-    strenght: "4",
-    dexterity: "2",
-    intelligency: "3",
-}
 
 export const Features = () => {
     const [selectRaceIndex, setSelectRaceIndex] = useState(0);
@@ -220,29 +211,28 @@ export const Features = () => {
 
 
                                                                     <div className={style.iconWrapper}>
-                                                                        {/*@ts-ignore*/}
-                                                                        <CustomTooltip title={toolTips[el.name] || el.description}>
-                                                                            <div className={style.toolTip}>?</div>
-                                                                        </CustomTooltip>
+
+                                                                        {
+                                                                            tabIndex === 2 &&
+                                                                            <>
+                                                                                <CustomTooltip
+                                                                                    // @ts-ignore
+                                                                                    title={el.title}>
+                                                                                    <div className={style.toolTip}>?</div>
+                                                                                </CustomTooltip>
+                                                                            </>
+                                                                        }
 
                                                                         {/*@ts-ignore*/}
                                                                         <img src={featuresIcons[el?.name]} alt=""
                                                                              className={style.icon}/>
                                                                     </div>
 
-                                                                    {/*@ts-ignore*/}
                                                                     {
                                                                         tabIndex === 2 &&
-                                                                        <img
-                                                                            src={(index === 0 || index === 2) ? batteryFull : batteryNotFull}
-                                                                            alt=""
-                                                                            style={{
-                                                                                width: "50px",
-                                                                                height: "auto",
-                                                                                margin: "-10px 0"
-                                                                            }}
-                                                                        />
+                                                                        <BatteryIcon value={Number(el.value) as ValueType}/>
                                                                     }
+
                                                                     <p>{el.description}</p>
                                                                 </div>
                                                             ))
@@ -295,7 +285,7 @@ export const Features = () => {
                                                 <p className={style.disableText2}>Coming soon</p>
                                                 {/*@ts-ignore*/}
                                                 {/*<img src={skillsIcons[el.name]} alt="" className={style.skillsItemIcon}/>*/}
-                                                <CustomTooltip title="Coming soon"
+                                                <CustomTooltip title="COMING SOON"
                                                 >
                                                     <div className={style.toolTip}>?</div>
                                                 </CustomTooltip>

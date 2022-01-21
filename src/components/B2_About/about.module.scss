@@ -13,8 +13,9 @@
 
   @include desktop() {
     width: 100%;
-    height: 100vh;
-    justify-content: center;
+    padding: 140px 0px 0px;
+    //height: 100vh;
+    //justify-content: center;
   }
 
   .inner {

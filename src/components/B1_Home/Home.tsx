@@ -21,6 +21,7 @@ export const Home = () => {
 
     return (
         <section className={style.home} style={{backgroundImage: `url(${back})`}}>
+            <img src={blur} alt="" className={style.blur}/>
             <div className={style.inner}>
                 <img src={eimoland} alt="" className={style.title}/>
                 <img src={heroesPhone} alt="" className={style.heroesPhoneImg}/>
@@ -46,7 +47,6 @@ export const Home = () => {
                 </div>
 
             </div>
-            {/*<img src={blur} alt="" className={style.blur}/>*/}
         </section>
     )
 };

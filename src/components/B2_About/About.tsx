@@ -16,7 +16,7 @@ export const About = () => {
                 <img src={divider} alt="" className={style.divider}/>
 
                 <p className={style.text}>
-                    This is an amazing world inhabited by humans, dwarves, orcs, elves and other fantastic creatures. This is a world of magic and valor. This world is full of mysteries, dangers and incredible adventures. Away from the main roads, it is restless here even in peacetime. There is always a danger of being caught by robbers or in the clutches of an unknown beast. But time is not always peaceful..
+                    This is an amazing world inhabited by humans, dwarves, orcs, elves and other fantastic creatures. This is a world of magic and valor. This world is full of mysteries, dangers and incredible adventures. Away from the main roads, it is restless here even in peacetime. There is always a danger of being caught by robbers or falling into the clutches of an unknown beast. But time is not always peaceful...
                 </p>
 
                 <div className={style.items}>

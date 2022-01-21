@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import style from "./timer.module.scss";
 import {TimerBlock} from "./TimerBlock";
-import {convertToTwoDigit, dateStart, getDays, getHours, getMins, getSecs} from "./helpers";
+import {dateStart} from "./helpers";
 import src1 from "../../assets/png/timer-icon-1.png";
 import src2 from "../../assets/png/timer-icon-2.png";
 import src3 from "../../assets/png/timer-icon-3.png";
@@ -9,7 +9,7 @@ import gnom from "../../assets/png/timer-gnom.png";
 
 export const iconLinks = [
     { src: src1, href: "https://t.me/eimolad"},
-    { src: src2, href: "https://discord.gg/K56KWEFdtU"},
+    { src: src2, href: "https://discord.gg/qD3R5nDXDZ"},
     { src: src3, href: "https://twitter.com/eimolad"},
 ];
 
@@ -61,13 +61,18 @@ export const Timer = () => {
                                 <span>14 days</span>
                                 <span> before our pre-sale on Entrepot</span>
                             </p>
-                            <p className={style.text}>
-                                First, we will mint 2880 3D NFT "Elder Dwarves", but only 2500 Elder Dwarves will be available
-                                for sale. This is the only Elder Dwarves emission. But there will be other races. We will
-                                publish the details of the terms of sale later. Subscribe to our social networks for the latest
-                                news from official sources. All official sources will be presented on this website.
-                                Beware of scammers!!!
-                            </p>
+
+                            <div className={style.textSubWrapper}>
+                                <p className={style.text}>
+                                    We will start the countdown 14 days before the sale.
+                                </p>
+                                <p className={style.text}>A total of 2,880 unique NFTs will be minted, but only 2,500 NFTs are available for sale. There will be 3 rounds of sales:</p>
+                                <p className={style.text} style={{opacity: 0}}>test</p>
+                                <p className={style.text}>1. Early Bird Round – 500 NFTs available for sale</p>
+                                <p className={style.text}>2. Community Round – 1,000 NFTs available for sale</p>
+                                <p className={style.text}>3. Public Round – 1,000 NFTs available for sale</p>
+                            </div>
+
                         </div>
                     </div>
 

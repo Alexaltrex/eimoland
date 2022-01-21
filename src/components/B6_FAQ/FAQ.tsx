@@ -19,9 +19,9 @@ import {theme} from "../../theme";
 
 export const iconLinks = [
     {src: src1, href: "https://t.me/eimolad"},
-    {src: src2, href: "https://discord.gg/K56KWEFdtU"},
+    {src: src2, href: "https://discord.gg/qD3R5nDXDZ"},
     {src: src3, href: "https://twitter.com/eimolad"},
-    {src: src4, href: "eimolad3d@gmail.com"},
+    {src: src4, href: "https://eimolad3d@gmail.com"},
     {src: src5, href: "https://medium.com/@eimolad3d"},
     {src: src6, href: "https://h5aet-waaaa-aaaab-qaamq-cai.raw.ic0.app/p/eimolad"},
     {src: src7, href: "https://distrikt.app/u/Eimolad"},
@@ -75,7 +75,7 @@ export const FAQ = () => {
     return (
         <section className={style.faq}
         >
-            <img src={back2} alt="" className={style.img}/>
+            <div className={style.back} />
 
             <div className={style.top}>
                 <div className={style.inner}>

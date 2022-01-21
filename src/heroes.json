@@ -44,17 +44,20 @@
         {
           "name": "strenght",
           "title": "Health points (HP), HP recovery (HPR), Attack (A), Stability (St)",
-          "description": "Strenght"
+          "description": "Strenght",
+          "value": "4"
         },
         {
           "name": "dexterity",
           "title": "Evasion (Ev), Accuracy (Ac), Attack Speed (AS), Movement Speed (MS)",
-          "description": "Dexterity"
+          "description": "Dexterity",
+          "value": "2"
         },
         {
           "name": "intelligency",
           "title": "Spell Power (SP), Spell Speed (SS), Spell points SP, SP recovery (SPR), Magic resistance (MR)",
-          "description": "Intelligence"
+          "description": "Intelligence",
+          "value": "3"
         }
       ]
     },
@@ -64,14 +67,14 @@
         "title": "mining",
         "type": "active",
         "active": true,
-        "description": "Allows you to extract additional loot from killed mobs."
+        "description": "Some places of Eimolad are rich in minerals. Dwarves have been able to mine them since ancient times."
       },
       {
         "name": "craft",
         "title": "craft",
         "type": "active",
         "active": true,
-        "description": "Allows you to create weapons and ammunition from ingredients"
+        "description": "Dwarves Elders inherited from their ancestors the secrets of Weapon & Equipment Production."
       }
     ]
   },

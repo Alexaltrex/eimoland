@@ -5,7 +5,7 @@ export const theme = createTheme({
         values: {
             mobile: 0,
             tablet: 768,
-            desktop: 1918,
+            desktop: 1240,
         },
     },
 });

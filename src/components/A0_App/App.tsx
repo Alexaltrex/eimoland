@@ -46,28 +46,32 @@ export const App = () => {
     return (
         <div className={style.app}>
 
-            <Swiper className={style.swiper}
-                    direction='vertical'
-                    mousewheel={true}
-                    slidesPerView={1}
-                    spaceBetween={0}
-                    allowTouchMove={false}
-                    speed={500}
-            >
-                {
-                    slides.map(
-                        ({slide}, index) => (
-                            <SwiperSlide className={style.slide}
-                                         key={index}
-                            >
-                                {slide}
-                            </SwiperSlide>
-                        )
-                    )
-                }
-            </Swiper>
+            {/*<Swiper className={style.swiper}*/}
+            {/*        direction='vertical'*/}
+            {/*        mousewheel={true}*/}
+            {/*        slidesPerView={1}*/}
+            {/*        spaceBetween={0}*/}
+            {/*        allowTouchMove={false}*/}
+            {/*        speed={500}*/}
+            {/*>*/}
+            {/*    {*/}
+            {/*        slides.map(*/}
+            {/*            ({slide}, index) => (*/}
+            {/*                <SwiperSlide className={style.slide}*/}
+            {/*                             key={index}*/}
+            {/*                >*/}
+            {/*                    {slide}*/}
+            {/*                </SwiperSlide>*/}
+            {/*            )*/}
+            {/*        )*/}
+            {/*    }*/}
+            {/*</Swiper>*/}
 
-            <div className={style.mobileComponents}>
+            {/*<div className={style.mobileComponents}>*/}
+            {/*    */}
+            {/*</div>*/}
+
+            <div className={style.components}>
                 {
                     slides.map(({component}, index) => (
                         <div key={index}>
@@ -76,6 +80,8 @@ export const App = () => {
                     ))
                 }
             </div>
+
+
         </div>
     );
 }
