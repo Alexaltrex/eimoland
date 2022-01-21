@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/eimoland/static/css/main.f61c09f7.css",
-    "main.js": "/eimoland/static/js/main.09c6132e.js",
+    "main.css": "/eimoland/static/css/main.b52e062d.css",
+    "main.js": "/eimoland/static/js/main.b2d42451.js",
     "static/js/787.eb43d37c.chunk.js": "/eimoland/static/js/787.eb43d37c.chunk.js",
     "static/media/features-back.png": "/eimoland/static/media/features-back.fd51ddb690a7f4711fdf.png",
     "static/media/faq-back2.png": "/eimoland/static/media/faq-back2.7046e195ee5c49051c33.png",
     "static/media/home-back.png": "/eimoland/static/media/home-back.6165a11285b382b0ec03.png",
+    "static/media/timer-gnom.png": "/eimoland/static/media/timer-gnom.3850270c4b3100c9f5f3.png",
     "static/media/features-gnome.png": "/eimoland/static/media/features-gnome.b80fd3ffb2a379ca9f9d.png",
     "static/media/modal-back.png": "/eimoland/static/media/modal-back.cbebb495cc9e3f0ba3a8.png",
     "static/media/home-races.png": "/eimoland/static/media/home-races.3c5dccd641f42fa7b53f.png",
-    "static/media/timer-gnom.png": "/eimoland/static/media/timer-gnom.4d2bc22cf6fc68bb7680.png",
     "static/media/home-races-phone.png": "/eimoland/static/media/home-races-phone.32c5dbdda103abf622a4.png",
     "static/media/world1.png": "/eimoland/static/media/world1.7402f9be1b1545c628a9.png",
     "static/media/features-content-back.png": "/eimoland/static/media/features-content-back.de4166201398574ad0b9.png",
@@ -41,12 +41,12 @@
     "static/media/magicRobe.png": "/eimoland/static/media/magicRobe.40c876cef0cf1e829c96.png",
     "static/media/twoHandedAxe.png": "/eimoland/static/media/twoHandedAxe.29c84ad0454db1e7a983.png",
     "index.html": "/eimoland/index.html",
-    "main.f61c09f7.css.map": "/eimoland/static/css/main.f61c09f7.css.map",
-    "main.09c6132e.js.map": "/eimoland/static/js/main.09c6132e.js.map",
+    "main.b52e062d.css.map": "/eimoland/static/css/main.b52e062d.css.map",
+    "main.b2d42451.js.map": "/eimoland/static/js/main.b2d42451.js.map",
     "787.eb43d37c.chunk.js.map": "/eimoland/static/js/787.eb43d37c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f61c09f7.css",
-    "static/js/main.09c6132e.js"
+    "static/css/main.b52e062d.css",
+    "static/js/main.b2d42451.js"
   ]
 }
