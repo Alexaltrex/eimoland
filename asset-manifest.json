@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/eimoland/static/css/main.64ca1092.css",
-    "main.js": "/eimoland/static/js/main.8cb52e0c.js",
+    "main.js": "/eimoland/static/js/main.7e8e933c.js",
     "static/js/787.eb43d37c.chunk.js": "/eimoland/static/js/787.eb43d37c.chunk.js",
     "static/media/features-back.png": "/eimoland/static/media/features-back.fd51ddb690a7f4711fdf.png",
     "static/media/faq-back2.png": "/eimoland/static/media/faq-back2.7046e195ee5c49051c33.png",
@@ -43,11 +43,11 @@
     "static/media/twoHandedAxe.png": "/eimoland/static/media/twoHandedAxe.29c84ad0454db1e7a983.png",
     "index.html": "/eimoland/index.html",
     "main.64ca1092.css.map": "/eimoland/static/css/main.64ca1092.css.map",
-    "main.8cb52e0c.js.map": "/eimoland/static/js/main.8cb52e0c.js.map",
+    "main.7e8e933c.js.map": "/eimoland/static/js/main.7e8e933c.js.map",
     "787.eb43d37c.chunk.js.map": "/eimoland/static/js/787.eb43d37c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.64ca1092.css",
-    "static/js/main.8cb52e0c.js"
+    "static/js/main.7e8e933c.js"
   ]
 }
