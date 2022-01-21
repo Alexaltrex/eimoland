@@ -95,6 +95,16 @@ const tabMenu = [
     "FEATURES OF THE RACE",
 ];
 
+const toolTips = {
+    oneHandedSword: "+4 Attack",
+    twoHandedSword: "+5 Attack, -1 Attack Speed, -3 Move Speed",
+    twoHandedAxe: "+7 Attack, -2 Attack Speed, -4 Move Speed",
+    mace: "+11 Attack, -5 Attack Speed, -5 Move Speed",
+    strenght: "4",
+    dexterity: "2",
+    intelligency: "3",
+}
+
 export const Features = () => {
     const [selectRaceIndex, setSelectRaceIndex] = useState(0);
     const [tabIndex, setTabIndex] = useState(0);
@@ -120,7 +130,7 @@ export const Features = () => {
                     {
                         races.map(({icon_grey, icon_color, raceName}, index) => (
                             <div className={style.racesItem}
-                                 //onClick={() => setSelectRaceIndex(index)}
+                                //onClick={() => setSelectRaceIndex(index)}
                                  key={index}
                                  style={{
                                      cursor: index === 0 ? "pointer" : "not-allowed"
@@ -207,9 +217,19 @@ export const Features = () => {
                                                         {
                                                             (currentFeature as any[]).map((el, index) => (
                                                                 <div className={style.currentFeatureItem} key={index}>
-                                                                    {/*@ts-ignore*/}
-                                                                    <img src={featuresIcons[el?.name]} alt=""
-                                                                         className={style.icon}/>
+
+
+                                                                    <div className={style.iconWrapper}>
+                                                                        {/*@ts-ignore*/}
+                                                                        <CustomTooltip title={toolTips[el.name] || el.description}>
+                                                                            <div className={style.toolTip}>?</div>
+                                                                        </CustomTooltip>
+
+                                                                        {/*@ts-ignore*/}
+                                                                        <img src={featuresIcons[el?.name]} alt=""
+                                                                             className={style.icon}/>
+                                                                    </div>
+
                                                                     {/*@ts-ignore*/}
                                                                     {
                                                                         tabIndex === 2 &&
@@ -388,6 +408,7 @@ export const Features = () => {
                                         <div key={index} className="skill-block">
                                             <div className="skills-modal-iconBlock">
                                                 <div className="skills-modal-iconWrapper">
+                                                    <p>Coming soon</p>
                                                     <img src={skillIconCard} alt=""
                                                          className="skills-modal-iconWrapper-back"/>
                                                     {/*@ts-ignore*/}

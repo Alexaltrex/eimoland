@@ -8,10 +8,12 @@ import Modal from 'react-modal';
 import "./modal.scss";
 import modalBack from "../../assets/png/modal-back.png";
 import close from "../../assets/png/close.png";
-import point from "../../assets/png/world-point.png"
+
+import Scrollbars from "react-custom-scrollbars";
 
 export const World = () => {
     const [open, setOpen] = useState(false);
+
 
     return (
         <section className={style.world}>
@@ -46,7 +48,7 @@ export const World = () => {
                 <div className={style.btnBlock}>
                     <img src={left} alt="" className={style.btnSideImg}/>
                     <p onClick={() => setOpen(true)}
-                            className={style.button}
+                       className={style.button}
                     >
                         Read more
                     </p>
@@ -55,7 +57,6 @@ export const World = () => {
                 <img src={img1} alt="" className={style.img1}/>
                 <img src={img2} alt="" className={style.img2}/>
             </div>
-
 
             <Modal isOpen={open}
                    onRequestClose={() => setOpen(false)}
@@ -76,10 +77,14 @@ export const World = () => {
                     <img src={close} alt=""/>
                 </div>
 
-                <div className="world-modal-texts-wrapper">
-
-                    <img src={point} alt="" className="world-modal-texts-point"/>
-
+                <Scrollbars className="world-modal-texts-wrapper"
+                            renderThumbVertical={(props: any) => (
+                                <div {...props}
+                                     className={style.thumbVertical}
+                                />
+                            )}
+                            renderTrackVertical={(props: any) => <div {...props} className={style.trackVertical}/>}
+                >
                     <div className="world-modal-texts">
                         <p>
                             The world of Eimolad is a fantasy world populated by races of humans, orcs, dwarves, elves
@@ -136,7 +141,8 @@ export const World = () => {
                             southern fertile lands.
                         </p>
                     </div>
-                </div>
+                </Scrollbars>
+
 
             </Modal>
 

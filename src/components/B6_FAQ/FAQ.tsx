@@ -18,13 +18,13 @@ import titleDesktop from "../../assets/png/faq-title-desktop.png";
 import {theme} from "../../theme";
 
 export const iconLinks = [
-    {src: src1, href: "#"},
-    {src: src2, href: "#"},
-    {src: src3, href: "#"},
-    {src: src4, href: "#"},
-    {src: src5, href: "#"},
-    {src: src6, href: "#"},
-    {src: src7, href: "#"},
+    {src: src1, href: "https://t.me/eimolad"},
+    {src: src2, href: "https://discord.gg/K56KWEFdtU"},
+    {src: src3, href: "https://twitter.com/eimolad"},
+    {src: src4, href: "eimolad3d@gmail.com"},
+    {src: src5, href: "https://medium.com/@eimolad3d"},
+    {src: src6, href: "https://h5aet-waaaa-aaaab-qaamq-cai.raw.ic0.app/p/eimolad"},
+    {src: src7, href: "https://distrikt.app/u/Eimolad"},
 ];
 
 export const accordions = [
@@ -172,7 +172,7 @@ export const FAQ = () => {
                 <div className={style.links}>
                     {
                         iconLinks.map(({src, href}, index) => (
-                            <a className={style.link} href={href} key={index}>
+                            <a className={style.link} href={href} key={index} target="_blank" rel="noopener noreferrer">
                                 <img src={src} alt=""/>
                             </a>
                         ))

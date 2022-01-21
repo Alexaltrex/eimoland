@@ -8,9 +8,9 @@ import src3 from "../../assets/png/timer-icon-3.png";
 import gnom from "../../assets/png/timer-gnom.png";
 
 export const iconLinks = [
-    { src: src1, href: "#"},
-    { src: src2, href: "#"},
-    { src: src3, href: "#"},
+    { src: src1, href: "https://t.me/eimolad"},
+    { src: src2, href: "https://discord.gg/K56KWEFdtU"},
+    { src: src3, href: "https://twitter.com/eimolad"},
 ];
 
 
@@ -107,7 +107,7 @@ export const Timer = () => {
                             <div className={style.links}>
                                 {
                                     iconLinks.map(({src, href}, index) => (
-                                        <a className={style.link} href={href} key={index}>
+                                        <a className={style.link} href={href} key={index} target="_blank" rel="noopener noreferrer">
                                             <img src={src} alt=""/>
                                         </a>
                                     ))

@@ -160,3 +160,23 @@
   }
 
 }
+
+.thumbVertical {
+  cursor: pointer;
+  width: 56px!important;
+  height: 56px!important;
+  background-image: url(./world-point.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.trackVertical {
+  position: absolute;
+  background: transparent;
+  width: 56px!important;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+
+
+}

@@ -393,6 +393,7 @@
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: 1fr 1fr;
                 grid-gap: 35px 0px;
+                padding: 20px;
 
                 @include tablet() {
                   display: flex;
@@ -400,14 +401,44 @@
                 }
 
                 .currentFeatureItem {
+                  width: 105px;
                   display: flex;
                   flex-direction: column;
                   align-items: center;
+                  position: relative;
 
-                  .icon {
-                    width: 56px;
-                    height: 56px;
+
+
+                  .iconWrapper {
+                    position: relative;
+
+                    .toolTip {
+                      cursor: pointer;
+                      width: 20px;
+                      height: 20px;
+                      border-radius: 50%;
+                      background: rgba(41, 43, 46, 0.6);
+                      border: 1px solid rgb(210, 67, 40);
+                      @include center();
+                      font-family: Comfortaa;
+                      font-style: normal;
+                      font-weight: normal;
+                      font-size: 12px;
+                      line-height: 13px;
+                      color: #FFFFFF;
+
+                      position: absolute;
+                      top: -2px;
+                      right: -2px;
+                    }
+
+                    .icon {
+                      width: 56px;
+                      height: 56px;
+                    }
                   }
+
+
 
                   p {
                     margin-top: 18px;

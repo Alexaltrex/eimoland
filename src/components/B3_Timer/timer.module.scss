@@ -78,7 +78,7 @@
             @include tablet() {
               height: 507px;
               width: 711px;
-
+              width: auto;
             }
 
           }
@@ -150,6 +150,11 @@
       }
 
       .bottomBlock {
+        @include tablet() {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
 
         .timerWrapper {
           display: flex;
@@ -187,12 +192,14 @@
           align-items: center;
 
           @include tablet() {
-            align-items: flex-start;
+            align-items: center;
             padding-left: 38px;
           }
 
           @include desktop() {
             margin-top: 50px;
+            padding-left: 0;
+            align-items: center;
           }
 
           p {
@@ -236,8 +243,6 @@
                 height: 60px;
               }
 
-
-
               &:not(:first-child) {
                 margin-left: 25px;
               }
@@ -258,8 +263,10 @@
 
       img {
         display: none;
-        width: 974px;
+        //width: 974px;
+        width: auto;
         height: 695px;
+
 
         @include desktop() {
           display: block;

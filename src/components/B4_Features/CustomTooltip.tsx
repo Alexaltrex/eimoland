@@ -51,7 +51,6 @@ export const CustomTooltip: FC<ICustomTooltip> = ({
     };
 
     const matchDesktop = useMediaQuery(theme.breakpoints.up('desktop'));
-    console.log(matchDesktop)
 
     return (
         <>
